@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Weather Dashboard</title>
+    <!-- Bootstrap CSS CDN  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Jquery CDN  -->
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <!-- Font Awesome CSS Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <!-- JS & CSS links  -->
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+            <input type="text" placeholder="City"><button type="button"
+                class="query_btn btn btn-default btn-sm">Search</button><br>
+            <input type="text" placeholder="Zip Code"><button type="button"
+                class="query_btn btn btn-default btn-sm">Search</button><br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+            <h2>City: <span id="city"></span></h2>
+            <h2>Main Weather: <span id="main_weather"></span></h2>
+            <h2>Description: <span id="description_weather"></span></h2>
+            <img id="weather_image" src="">
+            <h2>Temperature: <span id="temperature"></span></h2>
+            <h2>Pressure: <span id="pressure"></span></h2>
+            <h2>Humidity: <span id="humidity"></span></h2>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
