@@ -1,0 +1,17 @@
+body {
+    background-image: url("weather2.jpg");
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    background: rgba(250, 252, 250, 0.7);
+    margin: 50px;
+    padding-top: 50px;
+}
+
+.future {
+    float: right;
+}
