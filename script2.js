@@ -1,69 +1,39 @@
 $(document).ready(function () {
     var appID = "7b4ef69a93eea74ccb01a31e9ab6026a";
 
+    var userInput = [];
 
+    function displayMessage(type, message) {
+        $("#msg").text(message);
+        $("#msg").attr("class", type);
+      }
+
+
+//Event Listener      
     $(".query_btn").click(function () {
-        // //Capture city & zip input
-        // function saveInput() {
-        //     var city = $("#cityInput").val();
-        //     var zip = $("#zipInput").val();
+
+ //LOCAL STORAGE
+        var user = {
+            city: $("#cityInput").val(),
+            zip: $("#zipInput").val()
+        };
+        console.log(user);
+
+        if ((user.city) && (user.zip) === "") {
+            displayMessage("error", "Please enter city or zip code");
+          } else if (user.zip === "") {
             
+        userInput.push(user.city);
+        console.log(userInput);
+        localStorage.setItem("all_user", JSON.stringify(userInput));
+     
+        var all_usersInfo = JSON.parse(localStorage.getItem("all_user"));
+        var lastInput = all_usersInfo[all_usersInfo.length-1];
 
-        //     if(!validateForm(city, zip)) {
-        //         return false;
-        //     }
-        //     var userLookup = {
-        //         city: city,
-        //         zip: zip
-        //     }
-        //     if(localStorage.getItem(userLookups) === null) {
-        //         var userLookups = [];
-        //         userLookups.push(userLookup);
-
-        //         localStorage.setItem("userLookups", JSON.stringify(userLookups));
-
-        //     } else {
-        //         var userLookups = JSON.parse(localStorage.getItem("userLookups"));
-
-        //         userLookups.push(userLookup);
-
-        //         localStorage.setItem("userLookups", JSON.stringify("userlookup"));
-                
-        //         $("#cityInput").reset();
-
-        //         //populate
-        //     }
-        //     }
-        
-    
-
-        var city = $("#cityInput").val();
-    
-        var empty = [];
-        empty.push(city);
-   
-
-        var zip = $("#zipInput").val();
-        var history = $("#history");
-
-      var storeInfo = localStorage.setItem("empty", JSON.stringify(empty));
-
-      storeInfo.push(empty);
-      console.log(storeInfo);
-      
-        // localStorage.setItem(history, zip);
-        console.log(localStorage.setItem("empty", JSON.stringify(empty))); //undefined
-        console.log(city); //dallas
-        //Search History
-        $("#history").text("Search History");
-
-        var div = $("<div>");
-        div.append(localStorage.getItem(city));
-        div.append(localStorage.getItem(zip));
-
-
-        // Clear all items
-        // localStorage.clear();
+        $("#historyCity").text(lastInput + city);
+       // $("#historyZip").text(lastInput + zip);
+          } 
+/////////////////////////////////////////////////////////
 
         var query_param = $(this).prev().val();
 
@@ -180,6 +150,10 @@ $(document).ready(function () {
                 })
 
         });
+    
+        // Clear all items
+        // localStorage.clear();
+
 
     })
 
