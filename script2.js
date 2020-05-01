@@ -1,16 +1,69 @@
 $(document).ready(function () {
     var appID = "7b4ef69a93eea74ccb01a31e9ab6026a";
 
-    //Capture city & zip input
-    var city = $("#cityInput").val();
-    var zip = $("#zipInput").val();
-    var history = $("#history");
-    console.log(city);
-    localStorage.setItem(history, city);
-    localStorage.setItem(history, zip);
-   
 
     $(".query_btn").click(function () {
+        // //Capture city & zip input
+        // function saveInput() {
+        //     var city = $("#cityInput").val();
+        //     var zip = $("#zipInput").val();
+            
+
+        //     if(!validateForm(city, zip)) {
+        //         return false;
+        //     }
+        //     var userLookup = {
+        //         city: city,
+        //         zip: zip
+        //     }
+        //     if(localStorage.getItem(userLookups) === null) {
+        //         var userLookups = [];
+        //         userLookups.push(userLookup);
+
+        //         localStorage.setItem("userLookups", JSON.stringify(userLookups));
+
+        //     } else {
+        //         var userLookups = JSON.parse(localStorage.getItem("userLookups"));
+
+        //         userLookups.push(userLookup);
+
+        //         localStorage.setItem("userLookups", JSON.stringify("userlookup"));
+                
+        //         $("#cityInput").reset();
+
+        //         //populate
+        //     }
+        //     }
+        
+    
+
+        var city = $("#cityInput").val();
+    
+        var empty = [];
+        empty.push(city);
+   
+
+        var zip = $("#zipInput").val();
+        var history = $("#history");
+
+      var storeInfo = localStorage.setItem("empty", JSON.stringify(empty));
+
+      storeInfo.push(empty);
+      console.log(storeInfo);
+      
+        // localStorage.setItem(history, zip);
+        console.log(localStorage.setItem("empty", JSON.stringify(empty))); //undefined
+        console.log(city); //dallas
+        //Search History
+        $("#history").text("Search History");
+
+        var div = $("<div>");
+        div.append(localStorage.getItem(city));
+        div.append(localStorage.getItem(zip));
+
+
+        // Clear all items
+        // localStorage.clear();
 
         var query_param = $(this).prev().val();
 
@@ -73,7 +126,7 @@ $(document).ready(function () {
                         $("#uv").css("background-color", 'red');
                     } if (uvi > 10) {
                         $("#uv").css("background-color", 'violet');
-                      //  alert("Extreme risk of harm from unprotected Sun exposure. Take all precautions.")
+                        //  alert("Extreme risk of harm from unprotected Sun exposure. Take all precautions.")
                     };
 
                     //5 Day Forecast Dates
@@ -123,17 +176,7 @@ $(document).ready(function () {
                     $("#day4").append(div);
                     $("#fcImage4").attr("src", "http://openweathermap.org/img/wn/" + response.daily[4].weather[0].icon + "@2x.png");
 
-                    //Search History
-                    // if 
-                    $("$history").text("Search History");
-                    
-                    var div = $("<div>");
-                    div.append(localStorage.getItem(city));
-                    div.append(localStorage.getItem(zip));
-                    
 
-                    // Clear all items
-                    // localStorage.clear();
                 })
 
         });
