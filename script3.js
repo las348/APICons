@@ -12,39 +12,27 @@ $(document).ready(function () {
     $(".query_btn").click(function () {
 
         //LOCAL STORAGE
- 
+
         city = $("#cityInput").val();
-        console.log(city); // current value
 
-        var historyCity = localStorage.getItem("all_user");
-console.log(historyCity); //last searched value
+        console.log(city);
 
-        if (!city) {
+        if (city === "") {
             displayMessage("error", "Please enter city");
-        } else if (!historyCity) {
-            historyCity = [];
         } else {
-            historyCity = JSON.parse(historyCity);
-        }
 
-            historyCity.push(city);
-            console.log(userInput); //dallas, current
+            userInput.push(city);
+            console.log(userInput);
+            localStorage.setItem("all_user", JSON.stringify(userInput));
 
-            localStorage.setItem("all_user", JSON.stringify(historyCity));
+            var historyCity = JSON.parse(localStorage.getItem("all_user"));
 
-            //var historyCity = JSON.parse(localStorage.getItem("all_user"));
-
-              for (var i = 0; i < historyCity.length; i++) {
-                  console.log(historyCity);
-
-                var cityBtn = $("<button>");
-                cityBtn.text(city);
-  }
-                $(".userHistory").append(cityBtn);
-
+            var cityBtn = $("<button>");
+            cityBtn.text(historyCity);
+            $(".userHistory").append(cityBtn);
+        };
         // Clear all items
-       // localStorage.clear();
-    
+        // localStorage.clear();
         /////////////////////////////////////////////////////////
 
         var query_param = $(this).prev().val();
