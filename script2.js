@@ -8,44 +8,9 @@ $(document).ready(function () {
         $("#msg").attr("class", type);
     }
 
-    //Event Listener      
-    $(".query_btn").click(function () {
-
-        //LOCAL STORAGE
+    //Event Listener   
  
-        city = $("#cityInput").val();
-        console.log(city); // current value
-
-        var historyCity = localStorage.getItem("all_user");
-console.log(historyCity); //last searched value
-
-        if (!city) {
-            displayMessage("error", "Please enter city");
-        } else if (!historyCity) {
-            historyCity = [];
-        } else {
-            historyCity = JSON.parse(historyCity);
-        }
-
-            historyCity.push(city);
-            console.log(userInput); //dallas, current
-
-            localStorage.setItem("all_user", JSON.stringify(historyCity));
-
-            //var historyCity = JSON.parse(localStorage.getItem("all_user"));
-
-              for (var i = 0; i < historyCity.length; i++) {
-                  console.log(historyCity);
-
-                var cityBtn = $("<button>");
-                cityBtn.text(city);
-  }
-                $(".userHistory").append(cityBtn);
-
-        // Clear all items
-       // localStorage.clear();
-    
-        /////////////////////////////////////////////////////////
+    $(".query_btn").click(function () {
 
         var query_param = $(this).prev().val();
 
@@ -85,7 +50,7 @@ console.log(historyCity); //last searched value
 
             var futureWeather = "http://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + appID;
 
-          
+
             $.ajax({
                 url: futureWeather,
                 method: "GET"
@@ -160,7 +125,44 @@ console.log(historyCity); //last searched value
 
 
                 });
-            
+
         });
+    
+        //LOCAL STORAGE
+        city = $("#cityInput").val();
+        console.log(city); // current value
+
+        var historyCity = localStorage.getItem("all_user");
+        console.log(historyCity); //last searched value
+
+        if (!city) {
+            displayMessage("error", "Please enter city");
+        } else if (!historyCity) {
+            historyCity = [];
+        } else {
+            historyCity = JSON.parse(historyCity);
+        }
+
+        historyCity.push(city);
+        console.log(userInput); //dallas, current
+
+        localStorage.setItem("all_user", JSON.stringify(historyCity));
+
+        for (var i = 0; i < historyCity.length; i++) {
+            console.log(historyCity);
+
+            var cityBtn = $("<button>");
+            cityBtn.addClass("city-history");
+            cityBtn.text(city);
+        }
+        $(".userHistory").prepend(cityBtn);
+
+        // Clear all items
+        // localStorage.clear();
     });
+
+    $(".city-history").on("click", function(){
+
+    })
+
 });
