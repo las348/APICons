@@ -6,9 +6,10 @@ body {
 }
 
 .jumbotron {
-  background-color: black;
+  background-color: rgba(250, 252, 250, 0.9);
   text-align: center;
   color: rgb(112, 157, 216);
+  font-weight: bold;
 }
 
 /* Cities column */
@@ -32,31 +33,10 @@ body {
 }
 
 /* Current city data */
-.city-current {
+.city-info {
   border: solid 2px black;
   border-radius: 5px;
   margin: 20px;
-}
-
-/* Five day data card */
-.card {
-  background-color: rgb(112, 157, 216);
-  color: black;
-  font-size: smaller;
-}
-
-/* Class - name and date */
-.inline {
-  float: left;
-}
-
-/* Current data icon */
-.current-icon {
-  float: right;
-  background-color: rgb(112, 157, 216);
-  border: 5px solid rgb(112, 157, 216);
-  border-radius: 5px;
-  display: none;
 }
 
 /* Current data */
@@ -65,9 +45,27 @@ body {
   padding: 20px;
 }
 
-/* temperature icon for 5-day data */
-.temp-icon {
-  padding: 8px;
+.hide {
+   visibility: hidden;
+}
+
+.showForecast {
+  visibility: visible;
+  } 
+
+.card {
+  background: rgba(250, 252, 250, 0.7);
+}
+
+.forecast {
+  text-align: center;
+  background-color:  rgb(112, 157, 216);
+  padding: 10px;
+}
+
+/* Class - name and date */
+.inline {
+  float: left;
 }
 
 /* Search button */

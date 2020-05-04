@@ -122,14 +122,17 @@ $(document).ready(function () {
                         //  alert("Extreme risk of harm from unprotected Sun exposure. Take all precautions.")
                     };
 
-                    //5 Day Forecast Dates
+                    //6 Day Forecast Dates
                     var day0 = NowMoment.add(1, 'day').format('MM/DD');
                     var day1 = NowMoment.add(1, 'day').format('MM/DD');
                     var day2 = NowMoment.add(1, 'day').format('MM/DD');
                     var day3 = NowMoment.add(1, 'day').format('MM/DD');
                     var day4 = NowMoment.add(1, 'day').format('MM/DD');
+                    var day5 = NowMoment.add(1, 'day').format('MM/DD');
                    
-                    $(".forecast").text("5 Day Forecast");
+                    $(".forecast").text("6 Day Forecast");
+                    $(".mb-4").removeClass("hide");                
+                    $(".mb-4").addClass("showForecast");
 
                     // Convert the temp to fahrenheit
                     var temp0 = parseInt((response.daily[0].temp.day - 273.15) * 1.80 + 32);
@@ -137,31 +140,45 @@ $(document).ready(function () {
                     var temp2 = parseInt((response.daily[2].temp.day - 273.15) * 1.80 + 32);
                     var temp3 = parseInt((response.daily[3].temp.day - 273.15) * 1.80 + 32);
                     var temp4 = parseInt((response.daily[4].temp.day - 273.15) * 1.80 + 32);
+                    var temp5 = parseInt((response.daily[5].temp.day - 273.15) * 1.80 + 32);
+
+                    $(".future").addClass("city-info data");
 
                     var div = $("<div>");
-                    div.text(day0 + " Temp: " + temp0 + "\xB0F" + " Humidity: " + response.daily[0].humidity);
+                    $(".day0").text(day0);
+                    div.text("Temp: " + temp0 + "\xB0F" + " Humidity: " + response.daily[0].humidity);
                     $("#day0").empty().append(div);
                     $("#fcImage0").attr("src", "http://openweathermap.org/img/wn/" + response.daily[0].weather[0].icon + "@2x.png");
 
                     var div = $("<div>");
-                    div.text(day1 + " Temp: " + temp1 + "\xB0F" + " Humidity: " + response.daily[1].humidity);
+                    $(".day1").text(day1);
+                    div.text("Temp: " + temp1 + "\xB0F" + " Humidity: " + response.daily[1].humidity);
                     $("#day1").empty().append(div);
                     $("#fcImage1").attr("src", "http://openweathermap.org/img/wn/" + response.daily[1].weather[0].icon + "@2x.png");
 
                     var div = $("<div>");
-                    div.text(day2 + " Temp: " + temp2 + "\xB0F" + " Humidity: " + response.daily[2].humidity);
+                    $(".day2").text(day2);
+                    div.text("Temp: " + temp2 + "\xB0F" + " Humidity: " + response.daily[2].humidity);
                     $("#day2").empty().append(div);
                     $("#fcImage2").attr("src", "http://openweathermap.org/img/wn/" + response.daily[2].weather[0].icon + "@2x.png");
 
                     var div = $("<div>");
-                    div.text(day3 + " Temp: " + temp3 + "\xB0F" + " Humidity: " + response.daily[3].humidity);
+                    $(".day3").text(day3);
+                    div.text("Temp: " + temp3 + "\xB0F" + " Humidity: " + response.daily[3].humidity);
                     $("#day3").empty().append(div);
                     $("#fcImage3").attr("src", "http://openweathermap.org/img/wn/" + response.daily[3].weather[0].icon + "@2x.png");
 
                     var div = $("<div>");
-                    div.text(day4 + " Temp: " + temp4 + "\xB0F" + " Humidity: " + response.daily[4].humidity);
+                    $(".day4").text(day4);
+                    div.text("Temp: " + temp4 + "\xB0F" + " Humidity: " + response.daily[4].humidity);
                     $("#day4").empty().append(div);
                     $("#fcImage4").attr("src", "http://openweathermap.org/img/wn/" + response.daily[4].weather[0].icon + "@2x.png");
+
+                    var div = $("<div>");
+                    $(".day5").text(day5);
+                    div.text("Temp: " + temp5 + "\xB0F" + " Humidity: " + response.daily[5].humidity);
+                    $("#day5").empty().append(div);
+                    $("#fcImage5").attr("src", "http://openweathermap.org/img/wn/" + response.daily[5].weather[0].icon + "@2x.png");
 
                 }); //forecast api
            
