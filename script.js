@@ -130,7 +130,8 @@ $(document).ready(function () {
                     var day4 = NowMoment.add(1, 'day').format('MM/DD');
                     var day5 = NowMoment.add(1, 'day').format('MM/DD');
                    
-                    $(".forecast").text("6 Day Forecast");
+                    $(".forecast").text("6 Day Forecast").css("background-color", "rgb(112, 157, 216)");
+
                     $(".mb-4").removeClass("hide");                
                     $(".mb-4").addClass("showForecast");
 

@@ -36,7 +36,14 @@ body {
 .city-info {
   border: solid 2px black;
   border-radius: 5px;
-  margin: 20px;
+ }
+
+
+.card-img-top {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Current data */
@@ -59,13 +66,13 @@ body {
 
 .forecast {
   text-align: center;
-  background-color:  rgb(112, 157, 216);
   padding: 10px;
 }
 
 /* Class - name and date */
 .inline {
   float: left;
+  padding-left: 20px;
 }
 
 /* Search button */
