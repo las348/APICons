@@ -1,5 +1,5 @@
 body {
-  background-image: url("weather2.jpg");
+  background-image: url("background.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -8,14 +8,14 @@ body {
 .jumbotron {
   background-color: rgba(250, 252, 250, 0.9);
   text-align: center;
-  color: rgb(112, 157, 216);
+  color: lightsalmon;
   font-weight: bold;
 }
 
 /* Cities column */
 .cities {
   float: left;
-  background-color: rgb(112, 157, 216);
+  background-color: rgb(102, 163, 102);
   margin-bottom: 20px;
   border-radius: 5px;
   padding: 10px;
@@ -29,7 +29,7 @@ body {
 
 /* City buttons */
 .list-group-item {
-  background-color: rgb(112, 157, 216);
+  background-color: rgb(102, 163, 102);
 }
 
 /* Current city data */
@@ -48,7 +48,7 @@ body {
 
 /* Current data */
 .data {
-  background: rgba(250, 252, 250, 0.7);
+  background: rgb(102,163,102 0.7);
   padding: 20px;
 }
 
@@ -84,7 +84,7 @@ body {
 /* Elements in data class */
 .d {
   font-size: larger;
-  color: rgb(112, 157, 216);
+  color: rgb(102, 163, 102);
 }
 
 .uv-index {

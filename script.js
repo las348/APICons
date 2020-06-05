@@ -78,6 +78,8 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
+            $(".city-info").removeClass("hide");
+            $(".city-info").addClass("show");
 
             // Get data for today's weather
             $(".city").html(response.name);
@@ -130,10 +132,10 @@ $(document).ready(function () {
                     var day4 = NowMoment.add(1, 'day').format('MM/DD');
                     var day5 = NowMoment.add(1, 'day').format('MM/DD');
                    
-                    $(".forecast").text("6 Day Forecast").css("background-color", "rgb(112, 157, 216)");
+                    $(".forecast").text("6 Day Forecast").css("background-color", "rgb(102, 163, 102)");
 
                     $(".mb-4").removeClass("hide");                
-                    $(".mb-4").addClass("showForecast");
+                    $(".mb-4").addClass("show");
 
                     // Convert the temp to fahrenheit
                     var temp0 = parseInt((response.daily[0].temp.day - 273.15) * 1.80 + 32);
