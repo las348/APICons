@@ -81,6 +81,12 @@ $(document).ready(function () {
             $(".city-info").removeClass("hide");
             $(".city-info").addClass("show");
 
+            // $(".cities").removeClass("col col-lg-3");
+            // $(".cities").addClass("col-lg-3");
+
+            $(".dashboard").removeClass("col-md-auto");
+            $(".dashboard").addClass("col-lg-9");
+
             // Get data for today's weather
             $(".city").html(response.name);
             $(".date").html(currentDay);

@@ -23,6 +23,10 @@ body {
 }
 
 /* City history section */
+.flex-container {
+  justify-content: center;
+}
+
 .city-history {
   margin-bottom: 20px;
 }
@@ -52,13 +56,14 @@ body {
   padding: 20px;
 }
 
-.hide {
-   visibility: hidden;
-}
-
-.showForecast {
-  visibility: visible;
-  } 
+ 
+ .hide {
+     display: none;
+  }
+ 
+ .showForecast {
+   display: block;
+   } 
 
 .card {
   background: rgba(250, 252, 250, 0.7);
