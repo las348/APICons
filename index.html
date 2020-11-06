@@ -3,149 +3,148 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-    <link rel="stylesheet" href="style.css">
-    <!-- Moment.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" type="text/javascript"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="script.js" type="text/javascript"></script>
-    <title>Weather Report!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Moment.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="script.js" type="text/javascript"></script>
+  <title>Weather Report!</title>
 </head>
 
 <!-- Video by Suraj Behra from Pexels -->
 
 <body>
 
-    <!-- <div class="jumbotron jumbotron-fluid">
-        <h1 class="display-4">Weather Report</h1>
-    </div> -->
 
-    <video autoplay muted loop id="myVideo">
-      <source src="production ID_4154268.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
+  <video autoplay muted loop id="myVideo">
+    <source src="production ID_4154268.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
 
-    <div class="content">
-      <h1>Weather Report</h1>
-      <p>Get your 6-day forecast and never get caught without an umbrella.</p>
-    </div>
+  <div class="content">
+    <h1>Weather Report</h1>
+    <p>Get your 6-day forecast and never get caught without an umbrella.</p>
+  </div>
 
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <!-- Cities column -->
-            <div class="col-lg-3 cities">
-             
-
-                <!-- CIty search -->
-                <form>
-                    <label for="city">Search for a city: </label>
-
-                    <div class="form-group form-inline">
-                        <input type="text" class="form-control" id="city" placeholder="San Francisco">
-                        <button type="submit" class="btn submit"><i class="fas fa-search"></i></button>
-                    </div>
-                </form>
-
-                <!-- Previous city searches -->
-                <div class="list-group city-history"></div>
-
-            </div>
-
-            <div class="col-lg-auto dashboard">
-            
-                <!-- Current dashboard city -->
-                <div class="city-info hide">
-                    <!-- City header -->
-                    <header class="inline">
-                        <h3 class="city"></h3>
-                        <h3 class="date"></h3>
-                    </header>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <!-- Cities column -->
+      <div class="col-lg-3 cities">
 
 
-                    <div class="data">
-                        <br>
-                        <img id="current-icon" src="">
-                        <br>
-                        <p>Description: <span id="description_weather"></span></p>
-                        <p>Temperature: <span id="temp"></span></p>
-                        <p>Humidity: <span id="humidity"></span></p>
-                        <p>Wind speed: <span id="wind"></span></p>
-                        <p>Pressure: <span id="pressure"></span></p>
-                        <p>UVI: <span id="uv"></span></p>
+        <!-- CIty search -->
+        <form>
+          <label for="city">Search for a city: </label>
 
-                    </div>
-                </div>
-             
-               <div> <h2 class="forecast"></h2> </div>
+          <div class="form-group form-inline">
+            <input type="text" class="form-control" id="city" placeholder="San Francisco">
+            <button type="submit" class="btn submit"><i class="fas fa-search"></i></button>
+          </div>
+        </form>
 
-                <div class="row row-cols-1 row-cols-md-3" class="future">
-                    <div class="col mb-4 hide">
-                      <div class="card">
-                        <img src="..." class="card-img-top" id="fcImage0">
-                        <div class="card-body">
-                          <h5 class="card-title day0"></h5>
-                          <p class="card-text" id="day0"></p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col mb-4 hide">
-                      <div class="card">
-                        <img src="..." class="card-img-top" id="fcImage1">
-                        <div class="card-body">
-                          <h5 class="card-title day1"></h5>
-                          <p class="card-text" id="day1"></p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col mb-4 hide">
-                      <div class="card">
-                        <img src="..." class="card-img-top" id="fcImage2">
-                        <div class="card-body">
-                          <h5 class="card-title day2"></h5>
-                          <p class="card-text" id="day2"></p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col mb-4 hide">
-                      <div class="card">
-                        <img src="..." class="card-img-top" id="fcImage3">
-                        <div class="card-body">
-                          <h5 class="card-title day3"></h5>
-                          <p class="card-text" id="day3"></p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col mb-4 hide">
-                        <div class="card">
-                          <img src="..." class="card-img-top" id="fcImage4">
-                          <div class="card-body">
-                            <h5 class="card-title day4"></h5>
-                            <p class="card-text" id="day4"></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col mb-4 hide">
-                        <div class="card">
-                          <img src="..." class="card-img-top" id="fcImage5">
-                          <div class="card-body">
-                            <h5 class="card-title day5"></h5>
-                            <p class="card-text" id="day5"></p>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
+        <!-- Previous city searches -->
+        <div class="list-group city-history"></div>
 
-            </div>
+      </div>
+
+      <div class="col-lg-auto dashboard">
+
+        <!-- Current dashboard city -->
+        <div class="city-info hide">
+          <!-- City header -->
+          <header class="inline">
+            <h3 class="city"></h3>
+            <h3 class="date"></h3>
+          </header>
+
+
+          <div class="data">
+            <br>
+            <img id="current-icon" src="">
+            <br>
+            <p>Description: <span id="description_weather"></span></p>
+            <p>Temperature: <span id="temp"></span></p>
+            <p>Humidity: <span id="humidity"></span></p>
+            <p>Wind speed: <span id="wind"></span></p>
+            <p>Pressure: <span id="pressure"></span></p>
+            <p>UVI: <span id="uv"></span></p>
+
+          </div>
         </div>
+
+        <div>
+          <h2 class="forecast"></h2>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3" class="future">
+          <div class="col mb-4 hide">
+            <div class="card">
+              <img src="..." class="card-img-top" id="fcImage0">
+              <div class="card-body">
+                <h5 class="card-title day0"></h5>
+                <p class="card-text" id="day0"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4 hide">
+            <div class="card">
+              <img src="..." class="card-img-top" id="fcImage1">
+              <div class="card-body">
+                <h5 class="card-title day1"></h5>
+                <p class="card-text" id="day1"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4 hide">
+            <div class="card">
+              <img src="..." class="card-img-top" id="fcImage2">
+              <div class="card-body">
+                <h5 class="card-title day2"></h5>
+                <p class="card-text" id="day2"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4 hide">
+            <div class="card">
+              <img src="..." class="card-img-top" id="fcImage3">
+              <div class="card-body">
+                <h5 class="card-title day3"></h5>
+                <p class="card-text" id="day3"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4 hide">
+            <div class="card">
+              <img src="..." class="card-img-top" id="fcImage4">
+              <div class="card-body">
+                <h5 class="card-title day4"></h5>
+                <p class="card-text" id="day4"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4 hide">
+            <div class="card">
+              <img src="..." class="card-img-top" id="fcImage5">
+              <div class="card-body">
+                <h5 class="card-title day5"></h5>
+                <p class="card-text" id="day5"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    </div>
+  </div>
+  </div>
 
 
 
