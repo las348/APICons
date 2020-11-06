@@ -1,3 +1,15 @@
+var video = document.getElementById("myVideo");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+
 // Once document is loaded
 $(document).ready(function () {
     var appID = "7b4ef69a93eea74ccb01a31e9ab6026a";
