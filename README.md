@@ -1,24 +1,17 @@
-# 06 Server-Side APIs: Weather Dashboard
+# Weather Dashboard
 
-Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The documentation includes a section called "How to start" that will provide basic setup and usage instructions. Use `localStorage` to store any persistent data.
+## Deployed Site
+[https://las348.github.io/APICons/](https://las348.github.io/APICons/)
 
-```
-Build a weather dashoard 
-```
+![](homepage.PNG)
 
-##Criteria
+## Description:
+Weather Forecast site with the use of the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities all over the world.
 
-```
-Provide the user the ability to search for a city.
+![](forecast.PNG)
 
-Show the current and future conditions for that city.
+## Technologies:
+HTML, CSS, Javascript, API
 
-Present the city name, the date, an icon representation of weather conditions, the temperature, the humidity the wind speed, and the UV index (the color should indicate whether the conditions are favorable, moderate, or severe).
-
-Show the 5-day forecast that displays the date, an icon representation of weather conditions, 
-the temperature, and the humidity.
-
-Add that city to the search history.
-
-Clicking on a city in the search history present the current and future conditions for that city.
-
+## License:
+Copyright (c) 2020 Laureni Wilkinson-Sanchez

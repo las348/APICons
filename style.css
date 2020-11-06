@@ -76,7 +76,10 @@ body {
   background: rgba(250, 252, 250, 0.7);
 }
 
- 
+.city {
+  padding-top: 10px;
+} 
+
  .hide {
      display: none;
   }

@@ -93,8 +93,6 @@ $(document).ready(function () {
             $(".city-info").removeClass("hide");
             $(".city-info").addClass("show");
 
-            // $(".cities").removeClass("col col-lg-3");
-            // $(".cities").addClass("col-lg-3");
 
             $(".dashboard").removeClass("col-md-auto");
             $(".dashboard").addClass("col-lg-9");
@@ -108,7 +106,7 @@ $(document).ready(function () {
 
             var tempF = parseInt((response.main.temp - 273.15) * 1.80 + 32);
             // console.log(tempF);
-            $("#temp").html(tempF);
+            $("#temp").html(tempF + "\xB0F");
             console.log(tempF);
 
             $("#humidity").html(response.main.humidity);
