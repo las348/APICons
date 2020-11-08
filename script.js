@@ -100,7 +100,7 @@ $(document).ready(function () {
             // Get data for today's weather
             $(".city").html(response.name);
             $(".date").html(currentDay);
-            $("#current-icon").attr("src", "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png");
+            $("#current-icon").attr("src", "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png");
 
             $("#description_weather").html(response.weather[0].description);
 
@@ -115,7 +115,7 @@ $(document).ready(function () {
 
             lat = response.coord.lat;
             lon = response.coord.lon;
-            var futureWeather = "http://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + appID;
+            var futureWeather = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + appID;
 
             $.ajax({
                 url: futureWeather,
@@ -167,37 +167,37 @@ $(document).ready(function () {
                     $(".day0").text(day0);
                     div.text("Temp: " + temp0 + "\xB0F" + " Humidity: " + response.daily[0].humidity);
                     $("#day0").empty().append(div);
-                    $("#fcImage0").attr("src", "http://openweathermap.org/img/wn/" + response.daily[0].weather[0].icon + "@2x.png");
+                    $("#fcImage0").attr("src", "https://openweathermap.org/img/wn/" + response.daily[0].weather[0].icon + "@2x.png");
 
                     var div = $("<div>");
                     $(".day1").text(day1);
                     div.text("Temp: " + temp1 + "\xB0F" + " Humidity: " + response.daily[1].humidity);
                     $("#day1").empty().append(div);
-                    $("#fcImage1").attr("src", "http://openweathermap.org/img/wn/" + response.daily[1].weather[0].icon + "@2x.png");
+                    $("#fcImage1").attr("src", "https://openweathermap.org/img/wn/" + response.daily[1].weather[0].icon + "@2x.png");
 
                     var div = $("<div>");
                     $(".day2").text(day2);
                     div.text("Temp: " + temp2 + "\xB0F" + " Humidity: " + response.daily[2].humidity);
                     $("#day2").empty().append(div);
-                    $("#fcImage2").attr("src", "http://openweathermap.org/img/wn/" + response.daily[2].weather[0].icon + "@2x.png");
+                    $("#fcImage2").attr("src", "https://openweathermap.org/img/wn/" + response.daily[2].weather[0].icon + "@2x.png");
 
                     var div = $("<div>");
                     $(".day3").text(day3);
                     div.text("Temp: " + temp3 + "\xB0F" + " Humidity: " + response.daily[3].humidity);
                     $("#day3").empty().append(div);
-                    $("#fcImage3").attr("src", "http://openweathermap.org/img/wn/" + response.daily[3].weather[0].icon + "@2x.png");
+                    $("#fcImage3").attr("src", "https://openweathermap.org/img/wn/" + response.daily[3].weather[0].icon + "@2x.png");
 
                     var div = $("<div>");
                     $(".day4").text(day4);
                     div.text("Temp: " + temp4 + "\xB0F" + " Humidity: " + response.daily[4].humidity);
                     $("#day4").empty().append(div);
-                    $("#fcImage4").attr("src", "http://openweathermap.org/img/wn/" + response.daily[4].weather[0].icon + "@2x.png");
+                    $("#fcImage4").attr("src", "https://openweathermap.org/img/wn/" + response.daily[4].weather[0].icon + "@2x.png");
 
                     var div = $("<div>");
                     $(".day5").text(day5);
                     div.text("Temp: " + temp5 + "\xB0F" + " Humidity: " + response.daily[5].humidity);
                     $("#day5").empty().append(div);
-                    $("#fcImage5").attr("src", "http://openweathermap.org/img/wn/" + response.daily[5].weather[0].icon + "@2x.png");
+                    $("#fcImage5").attr("src", "https://openweathermap.org/img/wn/" + response.daily[5].weather[0].icon + "@2x.png");
 
                 }); //forecast api
            
